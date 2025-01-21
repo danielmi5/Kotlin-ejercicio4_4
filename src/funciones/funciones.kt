@@ -4,7 +4,7 @@ fun String.title(): String{
     val lista = this.split(" ")
     var cadena = ""
     for (palabra in lista){
-        cadena += palabra.replaceFirstChar { it.uppercaseChar() } + " "
+        cadena += palabra.lowercase().replaceFirstChar { it.uppercaseChar() } + " "
     }
     return cadena.trimEnd()
 }
