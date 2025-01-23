@@ -1,12 +1,19 @@
 import funciones.title
 
-class Coche (marca: String?, modelo: String?, var color: String?, val numCv: Double?, val numPuertas: Int?, val matricula: String?)
+class Coche (marca: String?, modelo: String?, color: String?, val numCv: Double?, val numPuertas: Int?, val matricula: String?)
 {
     val marca: String? = marca
         get() = field?.title()
 
     val modelo: String? = modelo
         get() = field?.title()
+
+    var color: String? = color
+        get() = field
+        set(value) {
+            require(value != null){"Color no puede ser nulo."}
+            field = value
+        }
 
     init{
         require(!marca.isNullOrBlank()){"Marca no puede ser nulo o vacío"}
